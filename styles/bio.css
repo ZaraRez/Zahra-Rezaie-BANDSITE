@@ -56,7 +56,7 @@ a {
   }
 }
 
-.contaier {
+.nav {
   background-color: #323232;
   position: sticky;
   top: 0;
@@ -64,48 +64,48 @@ a {
   z-index: 999;
 }
 @media screen and (min-width: 48rem) {
-  .contaier {
+  .nav {
     display: flex;
     height: 4.5rem;
   }
 }
 @media screen and (min-width: 80rem) {
-  .contaier {
+  .nav {
     display: flex;
     height: 6rem;
   }
 }
-.container__logo {
+.nav__logo {
   height: 1.875rem;
   display: flex;
   justify-content: center;
   margin-top: 1rem;
 }
 @media screen and (min-width: 48rem) {
-  .container__logo {
+  .nav__logo {
     max-height: 1.625rem;
     align-items: center;
     margin: auto 1rem auto 2.5rem;
   }
 }
 @media screen and (min-width: 80rem) {
-  .container__logo {
+  .nav__logo {
     margin-left: 7.5rem;
   }
 }
-.container__lists {
+.nav__lists {
   display: flex;
   width: 100%;
   margin-block-start: 0;
   justify-content: center;
 }
 @media screen and (min-width: 48rem) {
-  .container__lists {
+  .nav__lists {
     width: 30%;
     justify-content: start;
   }
 }
-.container__list {
+.nav__list {
   display: inline-flex;
   width: 100%;
   height: 100%;
@@ -117,16 +117,16 @@ a {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.container__list--nonactive:hover {
+.nav__list--nonactive:hover {
   font-family: "AvenirNext LT Pro";
   border-bottom: 4px #FFFFFF solid;
 }
-.container__list--active {
+.nav__list--active {
   font-family: "AvenirNext LT Pro";
   border-bottom: 4px #FFFFFF solid;
 }
 @media screen and (min-width: 48rem) {
-  .container__list {
+  .nav__list {
     padding: 0rem;
     font-size: 0.875rem;
     font-family: "AvenirNextLTPro-Demi";
@@ -136,7 +136,7 @@ a {
     margin: auto 2rem auto 2rem;
   }
 }
-.navcontainer__link {
+.nav__link {
   color: white;
   text-decoration: none;
 }
