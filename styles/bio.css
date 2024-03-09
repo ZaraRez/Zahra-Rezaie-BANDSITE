@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/woff2/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/woff/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/ttf/AvenirNextLTPro-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Demi";
+  src: url("../assets/fonts/woff2/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/woff/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/ttf/AvenirNextLTPro-Demi.woff.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/woff2/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/woff/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/ttf/AvenirNextLTPro-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: bold;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: "AvenirNextLTPro-Demi";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNext LT Pro";
+  color: #323232;
+}
+
+ul {
+  margin-block-start: 1em;
+  margin-block-end: 0em;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  margin: 0rem 0rem;
+}
+
+.header {
+  padding-top: 1rem;
+  background-color: #323232;
+}
+@media screen and (min-width: 48rem) {
+  .header {
+    padding-top: 0rem;
+  }
+}
+
+.contaier {
+  background-color: #323232;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+@media screen and (min-width: 48rem) {
+  .contaier {
+    display: flex;
+    height: 4.5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .contaier {
+    display: flex;
+    height: 6rem;
+  }
+}
+.container__logo {
+  height: 1.875rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .container__logo {
+    max-height: 1.625rem;
+    align-items: center;
+    margin: auto 1rem auto 2.5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .container__logo {
+    margin-left: 7.5rem;
+  }
+}
+.container__lists {
+  display: flex;
+  width: 100%;
+  margin-block-start: 0;
+  justify-content: center;
+}
+@media screen and (min-width: 48rem) {
+  .container__lists {
+    width: 30%;
+    justify-content: start;
+  }
+}
+.container__list {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.container__list--nonactive:hover {
+  font-family: "AvenirNext LT Pro";
+  border-bottom: 4px #FFFFFF solid;
+}
+.container__list--active {
+  font-family: "AvenirNext LT Pro";
+  border-bottom: 4px #FFFFFF solid;
+}
+@media screen and (min-width: 48rem) {
+  .container__list {
+    padding: 0rem;
+    font-size: 0.875rem;
+    font-family: "AvenirNextLTPro-Demi";
+    width: auto;
+    display: flex;
+    justify-content: baseline;
+    margin: auto 2rem auto 2rem;
+  }
+}
+.navcontainer__link {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  background-image: url(../assets/Images/hero-bio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 17.5rem;
+  width: 101.5%;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.hero__overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #323232;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.hero__title {
+  color: white;
+  position: absolute;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  z-index: 1;
+  letter-spacing: 0.125rem;
+  font-family: "AvenirNextLTPro-Demi";
+}
+@media screen and (min-width: 48rem) {
+  .hero__title {
+    font-size: 3.4rem;
+    font-family: "AvenirNextLTPro-Demi";
+    margin-left: 3rem;
+    margin-top: 3rem;
+    letter-spacing: 0.25rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .hero__title {
+    font-size: 4rem;
+    margin-left: 7.8rem;
+    margin-top: -3rem;
+    letter-spacing: 0.1rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .hero {
+    height: 29rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .hero {
+    height: 45.5rem;
+  }
+}
