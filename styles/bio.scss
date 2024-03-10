@@ -23,32 +23,41 @@ body {
 ul {
     margin-block-start: 1em;
     margin-block-end: 0em;
+    
 }
 
 li {
     list-style: none;
+   
 }
+
 a {
     margin: 0rem 0rem;
 }
 
-// Header__Section__SASS
+
+
+// Header Section SASS
 .header {
     padding-top: 1rem;
     background-color: $primary-color;
 
+
     @include tablet {
         padding-top: 0rem;
-    }
-}
 
-// Nav__Section__Sass
-.nav {
+
+    }
+
+}
+// header Section Sass
+.container{
     background-color: $primary-color;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 999;
+
 
     @include tablet {
         display: flex;
@@ -58,6 +67,7 @@ a {
         display: flex;
         height: 6rem;
     }
+
     &__logo {
         height: 1.875rem;  
         display: flex;
@@ -69,14 +79,17 @@ a {
             max-height: 1.625rem;
             align-items: center;
             margin: auto 1rem auto 2.5rem;
+
+
         }
+
         @include desktop {
             margin-left: 7.5rem;
         }
     }
 
 
-    &__lists{
+    &__list{
         display: flex;
         width: 100%;
         margin-block-start: 0;
@@ -85,8 +98,11 @@ a {
         @include tablet{
             width: 30%;  
             justify-content: start;
+
         }
+
     }
+
     &__list{
         display: inline-flex;
         width: 100%;
@@ -102,6 +118,7 @@ a {
             font-family: $body-font;
             border-bottom: 4px $white-color solid;
         }
+
         &--active{
             font-family: $body-font;
             border-bottom: 4px $white-color solid;
@@ -123,9 +140,10 @@ a {
         text-decoration: none;
     }
 }
-// Hero__Section__SASS
+// Hero Section SASS
 .hero {
-    background-image: url(../assets/Images/hero-bio.jpg);
+
+    background-image: url(../assets/images/hero-bio.jpg);
     background-size: cover;
     background-position: center ; 
     background-repeat: no-repeat;
@@ -176,4 +194,307 @@ a {
     @include desktop{
         height: 45.5rem;
     }
+
+
+
 }
+
+// About Section SAS
+.about{
+    padding: 1rem;
+
+    @include tablet{
+        width: 90%;
+        display: flexbox;
+        margin: auto;
+
+    }
+
+    &__title-sec {
+        font-weight: 600;
+        font-family: $subheader-font; 
+        font-size: 2.25rem;
+        margin: 2.75rem 1rem 1rem 1rem;
+
+
+        @include tablet{
+            font-size: 2.2rem;
+     
+        }
+
+        @include desktop{
+            margin-left: 2.4rem;
+     
+        }
+    }
+
+    &__container-bio{
+        display: flex;
+        flex-direction: column;    
+        width: 90%;
+        padding: 1rem;     
+        margin: auto;
+
+        @include desktop{
+            padding: 1rem 4rem 1rem 4rem;
+     
+        }
+
+    }
+    &__image {
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        width: 100%;
+        object-position: bottom;
+        width: 100%;
+
+        max-height: 20rem;
+
+        @include tablet {
+
+            max-height: 38rem;
+        }  
+        @include desktop {
+            max-height: 48rem;
+
+        }
+    }
+    &__quote{
+        margin: 1.6rem auto auto auto;
+        line-height: 2rem;
+        font-family: $subheader-font;
+        flex-wrap: wrap;
+        @include tablet{
+            font-size: 1.5rem;
+            margin: 1.6rem 0rem;
+     
+        }
+        @include desktop{
+            justify-content: flex-start;
+            width: 66%;
+     
+        }
+
+    }
+
+    &__auth{
+        margin: 1rem auto auto 0;
+        font-weight: 600;
+        font-family: $subheader-font;
+
+
+    }
+
+    &__container-des{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+        @include tablet{
+            width: 90%;
+            display: flexbox;
+            margin: auto;
+
+    
+        }
+        @include desktop{
+            padding: 1rem 4rem 1rem 4rem;
+     
+        }
+        
+    }
+
+    &__title-des {
+        margin-left: 0rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+        @include tablet{
+            font-size: 1.5rem;
+            line-height: 2.75rem;
+        }
+        @include desktop{
+        
+     
+        }
+  
+        
+
+    }
+
+    
+    &__para-container{
+        line-height: 1.5;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
+
+    }
+
+    &__para{
+        margin-bottom: 1rem;
+        @include tablet {
+            padding: 0rem 1.5rem 0rem 0rem;
+            font-size: 1rem;
+        }
+
+    }
+
+    @include desktop{
+
+    }
+
+
+
+}
+// Gallery Section SASS
+.gallery{
+    background-color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    padding:2.4rem 1.6rem 0rem 1.6rem;
+
+    &__title {
+        font-size: 2.25rem;
+        font-weight: 600;
+        font-family: $subheader-font;
+    }
+
+    &__image {
+        padding: 1rem 0rem ;
+        @include tablet {
+            width: 33.3%;
+            padding: 0.9rem 1.8rem 0.9rem 0rem ;
+        
+        }
+        &--cornor{
+            padding-right: 0;
+        }
+
+        
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            margin-right: 0;
+        
+        }
+        
+    }
+    @include desktop{
+        padding: 3rem 7rem 1rem 7rem;
+    }
+}
+// Footer Section SASS
+.footer {
+    padding:2.4rem 1.6rem;
+    background-color: $primary-color;
+    color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+
+
+    &__title {
+        
+        margin-bottom: 0;
+        padding-bottom: 0;
+        order: 1;
+        font-size: 2.25rem;
+
+        font-weight: 500;
+        
+    }
+
+    &__social{
+        order: 2;
+        display: flex;
+        align-items: center;
+       
+        
+        @include tablet{
+            flex-grow: 1;
+            margin-left: 2rem;
+        }
+        @include desktop {
+            margin-left: 3rem;
+        }
+    }
+
+    &__image {
+  
+        padding: 1rem 1rem 0rem 0rem;
+
+        @include tablet{
+            padding: 0.7rem 1rem 0rem 0rem;
+        }
+        @include desktop {
+            padding: 0.7rem 2rem 0rem 0rem;
+        }
+      
+    }
+
+
+
+    &__contact{
+        order: 3;
+        @include tablet {
+            order: 4;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+
+        }
+
+        @include desktop {
+            justify-content: start;
+            width: 77%;
+            flex-grow: 2;
+    
+        }
+    }
+
+    &__container-contact{
+        margin-top: 2rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        @include tablet {
+            width: 33%;
+        }
+    }
+
+    &__email{
+        color: white;
+        text-decoration: none;
+    }
+
+
+     &__contact-title{
+        font-family: $subheader-font;
+     }
+
+
+    &__image-logo{
+        order: 4;
+        width: 12.5rem;
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
+        
+        @include tablet {
+            width: 8.5rem;
+            order: 3;
+            margin: 0rem 0rem;
+            padding: 0rem 0rem;
+            max-height: 2.5rem;
+            
+            
+        }
+    }
