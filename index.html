@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSNDSITE</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BandSite-Biography</title>
     <link rel="stylesheet" href="./styles/bio.css">
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
         <nav class="container"> 
-            <a class="container__logo"><img class="container__img-logo" src="./assets/Logo/Logo-bandsite.svg"> </a>
+            <a class="container__logo"><img class="container__img-logo" src="./assets/Logo/Logo-bandsite.svg"></a>
         <ul class="container__list">
-            <li><a href="">Biography</a></li>
-            <li><a href="">Shows</a></li>
+            <li class="container__list container__list--active"><a class="container--link" href="#">Biography</a></li>
+            <li class="container__list container__list--nonactive"><a class="container--link" href="#">Shows</a></li>
         </ul>
     </nav>
     </header>
@@ -28,17 +29,17 @@
     
             <!--About Section -->
             <section class="about">
-                <h2 class="about__title-sec">About the Musicians</h2>
+                <h2 class="about__title">About the Musicians</h2>
                 <div class="about__container-bio">
-                    <img class="about__image" src="assets/images/band.jpg" alt=" consert image">
+                    <img class="about__image" src="assets/images/band.jpg" alt="consert image">
                     <p class="about__quote">“We push each other to be the best. 
                         It’s not uncommon for one of us to say ‘this needs to be better, 
                         back to the drawing board’”
                     </p>
                     <h4 class="about__auth">- lead vocalist of The Bees Knees</h4>
                 </div>
-                <div class="about__container-des">
-                    <h3 class="about__title-des">The Bees Knees</h3>
+                <div class="about__containerr">
+                    <h3 class="about__title-h3">The Bees Knees</h3>
                     <div class="about__para-container">
                         <p class="about__para">
                             The Bees Knees is a pop rock band originating from San Francisco, California.
@@ -47,32 +48,30 @@
                             Having extensive experience working with both new and seasoned acts, 
                             the manager was confident the band could succeed even further with more support,
                             pushing The Bees Knees to sign with a well known record label.
-                         
-
- 
                         </p>
                         <p class="about__para">
                             From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts.
-                            New fans immediately fell in love with the band’s original and organic attitude, solidifying their place as one of the hottest and fastest up and coming acts of this century. 
-                            Fans affectionately refer to themselves as “The Hive” and are drawn to their candid and authentic performances on stage. The Bees Knees are currently recording their second studio album, looking to be released in early 2024.
+                            New fans immediately fell in love with the band’s original and organic attitude,
+                            solidifying their place as one of the hottest and fastest up and coming acts of this century. 
+                            Fans affectionately refer to themselves as “The Hive” and are drawn to their candid and authentic performances on stage. 
+                            The Bees Knees are currently recording their second studio album, looking to be released in early 2024.
                         </p>
                     </div>
                 </div>
             </section>
             <!-- Gallery section -->
-            <section class="gallery"
->
+            <section class="gallery">
 <h2 class="gallery__title"> Photo Gallery</h2>
 <div class="gallery__container">
      <img class="gallery__image"  src="./assets/Images/Photo-gallery-1.jpg" alt="consert">
     <img class="gallery__image"  src="./assets/Images/Photo-gallery-2.jpg" alt="dance">
-    <img class="gallery__image--cornor""  src="./assets/Images/Photo-gallery-3.jpg" alt="togather">
+    <img class="gallery__image gallery__image--cornor" src="./assets/Images/Photo-gallery-3.jpg" alt="togather">
     <img class="gallery__image"  src="./assets/Images/Photo-gallery-4.jpg" alt="light">
     <img class="gallery__image"  src="./assets/Images/Photo-gallery-5.jpg" alt="waving">
-    <img class="gallery__image--cornor"  src="./assets/Images/Photo-gallery-6.jpg" alt="vibe">
+    <img class="gallery__image gallery__image--cornor"  src="./assets/Images/Photo-gallery-6.jpg" alt="vibe">
     <img class="gallery__image"  src="./assets/Images/Photo-gallery-7.jpg" alt="color">
     <img class="gallery__image"  src="./assets/Images/Photo-gallery-8.jpg" alt="instrument">
-    <img class="gallery__image--cornor"  src="./assets/Images/Photo-gallery-9.jpg" alt="singer">
+    <img class="gallery__image gallery__image--cornor"  src="./assets/Images/Photo-gallery-9.jpg" alt="singer">
 </div>
 </section>
 </main>
@@ -85,7 +84,7 @@
         <a href="https://facebook.com/" target="_blank" class="footer__social-link">
             <img class="footer__image" src="./assets/Icons/SVG/Icon-facebook.svg" alt="Icon-facebook"></a>
         <a href="http://twitter.com"/ target="_blank" class="footer__social-link">
-            <img src="./assets/Icons/SVG/Icon-twitter.svg" alt="Icon-twitter"></a>
+            <img class="footer__image" src="./assets/Icons/SVG/Icon-twitter.svg" alt="Icon-twitter"></a>
     </div> <br>
     <div class="footer__contact">
         <div class="footer__container-contact">
@@ -116,8 +115,7 @@
             <p><a class="footer__email" href=" mailto:bookings@archentertainment.com" target="_blank">bookings@archentertainment.com</a>
             </p>
         </div>
-    <div><img class="footer__image-logo" src="/assets/Logo/Logo-bandsite.svg" alt="bandsite logo"> </div>
-
+    <img class="footer__image-logo" src="./assets/Logo/Logo-bandsite.svg" alt="bandsite logo">
  </div>
 </body>
 </html>
