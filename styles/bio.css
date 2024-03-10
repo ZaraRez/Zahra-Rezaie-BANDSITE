@@ -99,7 +99,7 @@ a {
   width: 100%;
   margin-block-start: 0;
   justify-content: center;
-  color: #FFFFFF;
+  color:white;
 }
 @media screen and (min-width: 48rem) {
   .container__list {
@@ -385,19 +385,19 @@ a {
   font-size: 2.25rem;
   font-weight: 500;
 }
-.footer__social {
+.footer__socialmedia {
   order: 2;
   display: flex;
   align-items: center;
 }
 @media screen and (min-width: 48rem) {
-  .footer__social {
+  .footer__socialmedia {
     flex-grow: 1;
     margin-left: 2rem;
   }
 }
 @media screen and (min-width: 80rem) {
-  .footer__social {
+  .footer__socialmedia {
     margin-left: 3rem;
   }
 }
