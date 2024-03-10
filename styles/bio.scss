@@ -1,7 +1,11 @@
 //Sass partials
-@use 'partials/mixins' as *;
+
+@import 'partials/variables';
+@use'partials/variables' as *;
 @use 'partials/fonts' as *;
-@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -9,50 +13,49 @@
     padding: 0;
 }
 
-h1, h2, h3, h4 {
-    font-family: $subheader-font;
-}
+
 
 body {
     margin: 0;
     padding: 0;
     font-family: $body-font;
-    color:  $primary-color;
+    color:  $primary;
   }
+h1, h2, h3, h4 {
+    font-family: $subheader-font;
 
-ul {
-    margin-block-start: 1em;
-    margin-block-end: 0em;
-    
-}
-
-li {
-    list-style: none;
-   
-}
-
-a {
-    margin: 0rem 0rem;
-}
 
 
 
 // Header Section SASS
 .header {
     padding-top: 1rem;
-    background-color: $primary-color;
+    background-color: $primary;
+    color: $white;
 
 
     @include tablet {
         padding-top: 0rem;
-
-
     }
+}
+    ul {
+    margin-block-start: 1em;
+    margin-block-end: 0em;
+    
+}
 
+    li {
+    list-style: none;
+   
+}
+
+    a {
+    margin: 0rem 0rem;
+}
 }
 // header Section Sass
 .container{
-    background-color: $primary-color;
+    background-color: $primary;
     position: sticky;
     top: 0;
     width: 100%;
@@ -107,21 +110,23 @@ a {
         display: inline-flex;
         width: 100%;
         height: 100%;
-        color:white ;
         font-size: 1rem;
         justify-content: center;
         align-items: center;
         font-weight: 700;
+        color: $white;
         padding-top: 1rem;
         padding-bottom: 1rem;
         &--nonactive:hover{
             font-family: $body-font;
-            border-bottom: 4px $white-color solid;
+            border-bottom: 4px $white solid;
+          
         }
 
         &--active{
             font-family: $body-font;
-            border-bottom: 4px $white-color solid;
+            border-bottom: 4px $white solid;
+            color: #FAFAFA;
         }
     
         @include tablet {
@@ -136,10 +141,11 @@ a {
     }
 
     &__link {
-        color: white;
+        color:$white;
         text-decoration: none;
     }
 }
+
 // Hero Section SASS
 .hero {
 
@@ -156,13 +162,13 @@ a {
     &__overlay{
         width: 100%;
         height: 100%;
-        background-color: $primary-color;
+        background-color: $primary;
         position: absolute;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 0;
     }
     &__title {
-        color: white;
+        color: $white;
         position: absolute;
         margin-left: 1.5rem;
         margin-top: 1rem;
@@ -351,7 +357,7 @@ a {
 }
 // Gallery Section SASS
 .gallery{
-    background-color: $secondary-color;
+    background-color: $secondary;
     display: flex;
     flex-direction: column;
     padding:2.4rem 1.6rem 0rem 1.6rem;
@@ -394,7 +400,7 @@ a {
 // Footer Section SASS
 .footer {
     padding:2.4rem 1.6rem;
-    background-color: $primary-color;
+    background-color: $primary;
     color: #FAFAFA;
     display: flex;
     flex-direction: column;
@@ -472,7 +478,7 @@ a {
     }
 
     &__email{
-        color: white;
+        color:$white;
         text-decoration: none;
     }
 

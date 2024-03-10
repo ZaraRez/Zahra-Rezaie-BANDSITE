@@ -1,30 +1,30 @@
+/* Typography */
 @font-face {
-  font-family: "AvenirNext LT Pro";
-  src: url("../assets/fonts/woff2/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/woff/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/ttf/AvenirNextLTPro-Regular.ttf") format("ttf");
+  font-family: "AvenirNextLTPro";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Demi";
-  src: url("../assets/fonts/woff2/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/woff/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/ttf/AvenirNextLTPro-Demi.woff.ttf") format("ttf");
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Demi.ttf") format("ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "AvenirNext LT Pro";
-  src: url("../assets/fonts/woff2/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/woff/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/ttf/AvenirNextLTPro-Bold.ttf") format("ttf");
+  font-family: "AvenirNextLTPro";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Bold.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: bold;
 }
+
+/* Universal Styles */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4 {
-  font-family: "AvenirNextLTPro-Demi";
-}
 
 body {
   margin: 0;
@@ -33,19 +33,10 @@ body {
   color: #323232;
 }
 
-ul {
-  margin-block-start: 1em;
-  margin-block-end: 0em;
+h1, h2, h3, h4 {
+  font-family: "AvenirNextLTPro-Demi";
 }
 
-li {
-  list-style: none;
-
-}
-
-a {
-  margin: 0rem 0rem;
-}
 
 .header {
   padding-top: 1rem;
@@ -63,6 +54,19 @@ a {
   top: 0;
   width: 100%;
   z-index: 999;
+}
+ul {
+  margin-block-start: 1em;
+  margin-block-end: 0em;
+}
+
+li { font-family:AvenirNextLTPro-Demi ;
+  color: #FFFFFF;
+
+}
+
+a {
+  margin: 0rem 0rem;
 }
 @media screen and (min-width: 48rem) {
   .container {
