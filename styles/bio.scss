@@ -1,6 +1,7 @@
-@use 'partials/variables.scss' as *;
-@use 'partials/fonts.scss' as *;
-@use 'partials/mixins.scss' as *;
+//Sass partials
+@use 'partials/mixins' as *;
+@use 'partials/fonts' as *;
+@use 'partials/variables' as *;
 
 *, *::before, *::after {
     box-sizing: border-box;
