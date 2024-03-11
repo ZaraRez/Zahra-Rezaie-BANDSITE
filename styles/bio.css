@@ -353,10 +353,9 @@ margin: 0 1.5rem;}
   font-size: 2.25rem;
   font-weight: 600;
   font-family: "AvenirNextLTPro-Demi";
+  padding-bottom: 1rem;
 }
-.gallery__image {
-  padding: 1rem 0rem;
-}
+
 @media screen and (min-width: 48rem) {
   .gallery__image {
     width: 33.3%;
@@ -392,27 +391,26 @@ margin: 0 1.5rem;}
   flex-direction: column;
   margin: auto;
 }
-.footer__title {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  order: 1;
-  font-size: 2.25rem;
-  font-weight: 500;
-}
-.footer__socialmedia {
+.footer__title { display: flex;
+    font-size: 2.25rem;
+    font-weight: 600;
+    font-family: "AvenirNextLTPro-Demi";
+    padding:0 ;
+    order: 1;
+  }
+.footer__socialmedia { order: 2;
   display: flex;
   align-items: center;
-  padding: auto;
 }
 @media screen and (min-width: 48rem) {
   .footer__socialmedia {
     flex-grow: 1;
-    margin-left: 2rem;
+    margin-left: 0;
   }
 }
 @media screen and (min-width: 80rem) {
   .footer__socialmedia {
-    margin-left: 3rem;
+    margin-left: 1rem;
   }
 }
 .footer__image {
