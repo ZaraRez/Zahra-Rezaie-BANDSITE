@@ -38,21 +38,7 @@ h1, h2, h3, h4 {
         padding-top: 0rem;
     }
 }
-    ul {
-    margin-block-start: 1em;
-    margin-block-end: 0em;
-    
-}
 
-    li {
-    list-style: none;
-   
-}
-
-    a {
-    margin: 0rem 0rem;
-}
-}
 // header Section Sass
 .container{
     background-color: $primary;
@@ -91,7 +77,8 @@ h1, h2, h3, h4 {
         }
     }
 
-
+    
+}
     &__list{
         display: flex;
         width: 100%;
@@ -101,9 +88,23 @@ h1, h2, h3, h4 {
         @include tablet{
             width: 30%;  
             justify-content: start;
-
         }
-
+        ul {
+            margin-block-start: 1em;
+            margin-block-end: 0em;
+            
+        }
+        
+            li {
+            list-style: none;
+           
+        }
+        
+            a {
+                color: white;
+                text-decoration: none;
+               margin: 0rem 0rem;
+        }
     }
 
     &__list{
@@ -118,8 +119,8 @@ h1, h2, h3, h4 {
         padding-top: 1rem;
         padding-bottom: 1rem;
         &--nonactive:hover{
-            font-family: $body-font;
-            border-bottom: 4px $white solid;
+        font-family: $body-font;
+        border-bottom: 4px $white solid;
           
         }
 
@@ -284,7 +285,7 @@ h1, h2, h3, h4 {
     }
 
     &__auth{
-        margin: 1rem auto auto 0;
+        margin: 0% auto auto 0;
         font-weight: 600;
         font-family: $subheader-font;
 
@@ -411,7 +412,7 @@ h1, h2, h3, h4 {
     &__title {
         
         margin-bottom: 0;
-        padding-bottom: 0;
+        padding: 0;
         order: 1;
         font-size: 2.25rem;
 
@@ -420,9 +421,9 @@ h1, h2, h3, h4 {
     }
 
     &__socialmedia{
-        order: 2;
         display: flex;
         align-items: center;
+    padding: 30px;}
        
         
         @include tablet{

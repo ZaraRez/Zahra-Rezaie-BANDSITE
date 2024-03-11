@@ -29,7 +29,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "AvenirNext LT Pro";
+  font-family: "AvenirNextLTPro";
   color: #323232;
 }
 
@@ -56,18 +56,22 @@ h1, h2, h3, h4 {
   z-index: 999;
 }
 ul {
+  -webkit-margin-before: 1em;
   margin-block-start: 1em;
+-webkit-margin-after: 0em;
   margin-block-end: 0em;
 }
 
-li { font-family:AvenirNextLTPro-Demi ;
-  color: #FFFFFF;
+li { list-style: none;
 
 }
 
 a {
-  margin: 0rem 0rem;
+  color: white;
+  text-decoration: none;
+ margin: 0rem 0rem;
 }
+
 @media screen and (min-width: 48rem) {
   .container {
     display: flex;
@@ -103,7 +107,6 @@ a {
   width: 100%;
   margin-block-start: 0;
   justify-content: center;
-  color:white;
 }
 @media screen and (min-width: 48rem) {
   .container__list {
@@ -124,11 +127,11 @@ a {
   padding-bottom: 1rem;
 }
 .container__list--nonactive:hover {
-  font-family: "AvenirNext LT Pro";
+  font-family: "AvenirNextLTPro";
   border-bottom: 4px #FFFFFF solid;
 }
 .container__list--active {
-  font-family: "AvenirNext LT Pro";
+  font-family: "AvenirNextLTPro";
   border-bottom: 4px #FFFFFF solid;
 }
 @media screen and (min-width: 48rem) {
@@ -281,7 +284,7 @@ a {
   }
 }
 .about__auth {
-  margin: 1rem auto auto 0;
+  margin: 0 auto auto 0;
   font-weight: 600;
   font-family: "AvenirNextLTPro-Demi";
 }
@@ -324,13 +327,20 @@ a {
     flex-direction: row;
   }
 }
+.about__title-h3{ font-size: 1.3;
+font-weight: 400;
+padding: 0.8rem 1.6rem 0 ;
+margin: 0 1.5rem;}
 .about__para {
+  font-size: 0.8rem;
   margin-bottom: 1rem;
+  padding: 1rem 0 1rem 1.6rem;
+  margin-left: 1.5rem;}
 }
 @media screen and (min-width: 48rem) {
   .about__para {
     padding: 0rem 1.5rem 0rem 0rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 .gallery {
@@ -390,9 +400,9 @@ a {
   font-weight: 500;
 }
 .footer__socialmedia {
-  order: 2;
   display: flex;
   align-items: center;
+  padding: auto;
 }
 @media screen and (min-width: 48rem) {
   .footer__socialmedia {
