@@ -1,31 +1,29 @@
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("../assets/Fonts/")
-      format("woff2"),
-    url("../assets/fonts/woff/AvenirNextLTPro-Regular.woff") format("woff"),
-    url("../assets/fonts/ttf/AvenirNextLTPro-Regular.ttf") format("ttf");
+  src: url("../assets/Fonts/AvenirNextLTPro-Regular.woff2") format("woff2"),
+    url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"),
+    url("../assets/fonts/AvenirNextLTPro-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "AvenirNextLTPro-Demi";
-  src: url("../assets/fonts/woff2/AvenirNextLTPro-Demi.woff2") format("woff2"),
-    url("../assets/fonts/woff/AvenirNextLTPro-Demi.woff") format("woff"),
-    url("../assets/fonts/ttf/AvenirNextLTPro-Demi.woff.ttf") format("ttf");
+  src: url("../assets/Fonts/AvenirNextLTPro-Demi.woff2") format("woff2"),
+    url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"),
+    url("../assets/Fonts/AvenirNextLTPro-Demi.ttf") format("ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "AvenirNext LT Pro";
-  src: url("../assets/fonts/woff2/AvenirNextLTPro-Bold.woff2") format("woff2"),
-    url("../assets/fonts/woff/AvenirNextLTPro-Bold.woff") format("woff"),
-    url("../assets/fonts/ttf/AvenirNextLTPro-Bold.ttf") format("ttf");
+  font-family: "AvenirNext LT bold";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"),
+    url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"),
+    url("../assets/fonts/AvenirNextLTPro-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: bold;
 }
 
 /* Universal Styles */
-*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -295,13 +293,13 @@ a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 17.5rem;
-    margin-top: 7rem;
+    height: 16.5rem;
+    margin-top: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 5.9rem;
-    height: 30rem;
+    height: 26rem;
     padding: 1.6rem;
   }
 
@@ -313,24 +311,27 @@ a {
 }
 @media screen and (min-width: 80rem) {
   .hero {
-    display: flex;
+    display:flex;
     height: 55rem;
-    margin-top: 4.78rem;
-    margin: 0 auto;
-    justify-content:center;
+    margin-top: 7rem;
+    margin: auto ;
+    justify-content:space-around;
+    align-items:center;
   }
 }
+.hero__title__container{ margin-bottom: 100px;
+justify-content: center;}
+
 .hero__sub-title {
   color: white;
   font-family: "AvenirNext LT Pro";
-  font-weight: 400;
+  font-weight: 150;
 }
 .hero__title {
-  margin-top: 1rem;
+  margin-top: auto;
   color: white;
   font-family: "AvenirNextLTPro-Demi";
-  font-size: 2.7rem;
-  margin-bottom: 2rem;
+  font-size: 8rem;
 }
 @media screen and (min-width: 48rem) {
   .hero__title {
@@ -339,7 +340,7 @@ a {
 }
 @media screen and (min-width: 48rem) {
   .hero__title__container {
-    width: 65%;
+    width: 60%;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -355,6 +356,7 @@ a {
 .hero__song {
   padding: 1rem;
   width: 100%;
+  margin: 0 4rem 0 0;
 }
 @media screen and (min-width: 48rem) {
   .hero__song {
