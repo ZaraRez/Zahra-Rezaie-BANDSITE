@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/shows.css">
+    <link rel="stylesheet" href="../styles/shows.css" >
     <script src="../scripts/build-shows-page.js" defer></script>
     <title>Shows</title>
 </head>
@@ -15,10 +15,10 @@
 
         <header class="header">
         <nav class="container"> 
-            <a class="container__logo"><img class="container__img-logo" src="./assets/Logo/Logo-bandsite.svg"></a>
+            <a class="container__logo"><img class="container__img-logo" src="../assets/Logo/Logo-bandsite.svg"></a>
         <ul class="container__list">
-            <li class="container__list container__list--active"><a class="container--link" href="#">Biography</a></li>
-            <li class="container__list container__list--nonactive"><a class="container--link" href="#">Shows</a></li>
+            <li class="container__list container__list--active"><a class="container--link" href="../index.html">Biography</a></li>
+            <li class="container__list container__list--nonactive"><a class="container--link" href="../pages/shows.html">Shows</a></li>
         </ul>
         </nav>
        </header>
@@ -30,8 +30,18 @@
                 <h3 class="hero__sub-title"> Beautiful Beasts Album </h3>
                 <h1 class="hero__title"> Stripes of Yellow For The Stings</h1>
             </div>
-            <iframe class="hero__song" frameborder="no" allow="outoplay"
-            src=""></iframe>
+          
+            <iframe width="40%" height="150" scrolling="no" frameborder="0" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1770884049&amp;color=#0066CC ;show_artwork= false">
+          </iframe>  
+<script>
+    // Get the iframe element
+    var iframe = document.getElementById("#hero__song");
+
+    // Remove the src attribute
+    iframe.removeAttribute("src");
+</script>
+
         </div>
     </section>
 
@@ -58,12 +68,12 @@
                     <h2 class="footer__title">Get in Touch</h2>
                     <div class="footer__social">
                         <a href="https://instagram.com/" target="_blank" class="footer__social-link">
-                            <img class="footer__image" src="../assets/icons/Icon-instagram.svg" alt="instagram icon"></a>
+                            <img class="footer__image" src="../assets/Icons/SVG/Icon-instagram.svg" alt="instagram icon"></a>
                         <a href="https://facebook.com/" target="_blank" class="footer__social-link">
-                            <img class="footer__image" src="../assets/icons/Icon-facebook.svg" alt="facebook icon">
+                            <img class="footer__image" src="../assets/Icons/SVG/Icon-facebook.svg" alt="facebook icon">
                         </a>
                         <a href="https://twitter.com/" target="_blank" class="footer__social-link">
-                            <img class="footer__image" src="../assets/icons/Icon-twitter.svg" alt="twitter icon">
+                            <img class="footer__image" src="../assets/Icons/SVG/Icon-twitter.svg" alt="twitter icon">
                         </a>
                     </div>
                     <br>
@@ -107,7 +117,7 @@
                             </p>
                         </div>
                     </div>
-                    <img class="footer__image-logo" src="../assets/logos/Logo-bandsite.svg" alt="bandsite logo">
+                    <img class="footer__image-logo" src="../assets/Logo/Logo-bandsite.svg" alt="bandsite logo">
                     <p class="footer__copyright">Copyright The Bees Knees © 2023 All Rights Reserved</p>
                 </div>
             </footer>

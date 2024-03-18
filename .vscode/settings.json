@@ -1,0 +1,9 @@
+
+{
+    "liveSassCompile.settings.autoprefix": [],
+    "sass.compile": {
+      "outFiles": "${workspaceFolder}/style.css",
+      "watch": true
+    }
+  }
+  
