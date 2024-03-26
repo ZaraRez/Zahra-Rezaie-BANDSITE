@@ -1,64 +1,111 @@
-const showTimes = [
-    {
-        date: "Mon Sept 09 2024",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Tue Sept 17 2024",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Oct 12 2024",
-        venue: "View Lounge",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Nov 16 2024",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Fri Nov 29 2024",
-        venue: "Moscow Center",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Wed Dec 18 2024",
-        venue: "Press Club",
-        location: "San Francisco, CA"
-    }
-];
 
+import BandSiteApi from "./band-site-api";
 
+//invoking functions for shows setup
+setupShows();
+fetchComments();
+showsLabel();
 
-const showsSchedule = document.querySelector(".shows__schedule");
-console.log(showsSchedule);
+// Function to set up the structure for the Shows Section
+function setupShows() {
+  const showsSection = document.querySelector(".shows");
+  const showsTitleContainer = document.createElement("div");
+  const showsTitle = document.createElement("h2");
+  showsTitle.innerText = "Shows";
+  showsTitle.classList.add("shows__title");
+  showsTitleContainer.classList.add("shows__title-container");
+  showsTitleContainer.appendChild(showsTitle);
+  const showsSchedule = document.createElement("div");
+  showsSchedule.classList.add("shows__schedule");
+  showsSection.append(showsTitleContainer, showsSchedule);
 
-showTimes.forEach((show) => {
-    //Element Creation for Show Card 
-    const showCard  = document.createElement("div");
+  // Fetch and display shows data
+  fetchShowsData();
+}
+
+//insert showsMenu
+function showsLabel() {
+  const showsSchedule = document.querySelector(".shows__schedule");
+  const tabDesMenu = document.createElement("div");
+  const dateLabel = document.createElement("p");
+  const venueLabel = document.createElement("p");
+  const locLabel = document.createElement("p");
+  const spacerContainer = document.createElement("div");
+  dateLabel.classList.add("shows__date-tab");
+  venueLabel.classList.add("shows__venue-tab");
+  locLabel.classList.add("shows__loc-tab");
+  spacerContainer.classList.add("shows__loc-spacer");
+  tabDesMenu.classList.add("shows__title-show");
+  dateLabel.innerText = "DATE";
+  venueLabel.innerText = "VENUE";
+  locLabel.innerText = "LOCATION";
+  tabDesMenu.append(dateLabel, venueLabel, locLabel, spacerContainer);
+  showsSchedule.append(tabDesMenu);
+}
+
+// Function to fetch shows data from the API and display it
+async function fetchShowsData() {
+  try {
+    // Fetch shows data using BandSiteApi class
+    const showsData = await bandSiteApi.getShows();
+
+    // Display shows data
+    showsCardFromData(showsData);
+  } catch (error) {
+    console.error("Error fetching shows data:", error);
+  }
+}
+
+// Function to fetch comments data from the API and display it
+function fetchComments() {
+  axios
+    .get(
+      "https://unit-2-project-api-25c1595833b2.herokuapp.com/comments/?api_key=51bcfc4c-0d5d-47dd-9c45-3f67d8a9d3e4"
+    )
+    .then((res) => {
+      let showsTimes = res.data;
+      showsCardFromData(showsTimes);
+      const cards = document.querySelectorAll(".shows__card");
+      cards.forEach((i) => i.addEventListener("click", cardClick));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+//Displays the showsCard is called within the fetchComments function
+function showsCardFromData(showsTimes) {
+  const showsSchedule = document.querySelector(".shows__schedule");
+  for (const show of showsTimes) {
+    //Element Creation for Show Card
+
     const dateLabel = document.createElement("p");
-    const showDate = document.createElement("p");
     const venueLabel = document.createElement("p");
-    const venueName = document.createElement("p");
     const locLabel = document.createElement("p");
+    const showCard = document.createElement("div");
+    const showDate = document.createElement("p");
+    const venueName = document.createElement("p");
     const locName = document.createElement("p");
+    const buttonContainer = document.createElement("div");
     const button = document.createElement("button");
-    const newSec =  document.createElement("hr");
-
-
+    const date = new Date(show.date);
+    const conditions = {
+      weekday: "short",
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    };
+    const dateString = date
+      .toLocaleDateString("en-US", conditions)
+      .replace(/,/g, "");
     //data insertion
     dateLabel.innerText = "DATE";
     venueLabel.innerText = "VENUE";
     locLabel.innerText = "LOCATION";
-    showDate.innerText = show.date;
-    venueName.innerText = show.venue;
-    locName.innerText = show.location;
     button.innerText = "BUY TICKETS";
-
-
+    showDate.innerText = dateString;
+    venueName.innerText = show.place;
+    locName.innerText = show.location;
     //adding classes
     showCard.classList.add("shows__card");
     dateLabel.classList.add("shows__label");
@@ -67,62 +114,43 @@ showTimes.forEach((show) => {
     venueName.classList.add("shows__venue");
     locLabel.classList.add("shows__label");
     locName.classList.add("shows__loc");
+    buttonContainer.classList.add("shows__btn-container");
     button.classList.add("shows__btn");
-    newSec.classList.add("shows__new-sec");
-
-
-
     //html insertion
-    showCard.appendChild(dateLabel);
-    showCard.appendChild(showDate);
-    showCard.appendChild(venueLabel);
-    showCard.appendChild(venueName);
-    showCard.appendChild(locLabel);
-    showCard.appendChild(locName);
-    showCard.appendChild(button);
-
-
+    buttonContainer.appendChild(button);
+    showCard.append(
+      dateLabel,
+      showDate,
+      venueLabel,
+      venueName,
+      locLabel,
+      locName,
+      buttonContainer
+    );
     showsSchedule.appendChild(showCard);
-    showsSchedule.appendChild(newSec);
+  }
+  const firstChild = showsSchedule.children[1];
+  const lastChild = showsSchedule.lastElementChild;
+  firstChild.classList.add("shows__card--fnode");
+  lastChild.classList.add("shows__card--lnode");
+}
 
-});
+// Event handler function for clicking on a shows card
+function cardClick(e) {
+  e.preventDefault();
+  const cards = document.querySelectorAll(".shows__card");
+  cards.forEach((i) => i.classList.remove("shows__card--clicked"));
+  if (
+    e.target.nodeName === "DIV" &&
+    e.target.classList.contains("shows__card")
+  ) {
+    e.target.classList.add("shows__card--clicked");
+  } else {
+    const clickedDiv = e.target.parentNode;
+    if (clickedDiv.classList.contains("shows__card"))
+      clickedDiv.classList.add("shows__card--clicked");
+  }
+}
 
-
-
-
-showsSchedule.addEventListener("click", (e) => {
-    const showCards = document.querySelectorAll('.shows__card');
-
-    showCards.forEach(element => element.classList.remove('shows__card--clicked'))
-    e.preventDefault();
-    console.log(e.target);
-    if ((e.target.nodeName === 'DIV') && e.target.classList.contains('shows__card')) {
-        e.target.classList.add("shows__card--clicked");
-    } else if(e.target.nodeName === 'HR') {
-        return;
-    }
-    else {
-        const clickedDiv = e.target.parentNode;
-        if(clickedDiv.classList.contains("shows__card"))
-            clickedDiv.classList.add("shows__card--clicked");
-    }
-});
-//  API request to fetch a song
-fetch('<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1770884049&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/chris-wallem" title="Chris Wallem" target="_blank" style="color: #cccccc; text-decoration: none;">Chris Wallem</a> · <a href="https://soundcloud.com/chris-wallem/sade-no-ordinary-love-chris-wallem-afrohouse-remix" title="SADE - NO ORDINARY LOVE (Chris Wallem AfroHouse Remix)" target="_blank" style="color: #cccccc; text-decoration: none;">SADE - NO ORDINARY LOVE (Chris Wallem AfroHouse Remix)</a></div>')
-  .then(response => response.json())
-  .then(data => {
-    // Extract song URL from API response
-    const songUrl = data.url;
-
-    // Construct iframe element
-    const iframe = document.createElement('iframe');
-    iframe.src = songUrl;
-    iframe.width = '25%';
-    iframe.height = '300';
-    iframe.frameBorder = '0';
-    iframe.allow = 'autoplay; encrypted-media';
-    
-    // Append iframe to website
-    document.body.appendChild(iframe);
-  })
-  .catch(error => console.error('Error fetching song:', error));
+// Invoking necessary functions
+setupShows();
