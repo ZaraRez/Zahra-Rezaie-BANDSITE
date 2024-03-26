@@ -1,102 +1,64 @@
-    //array creation
-    const comments = [  {
-            name: "Victor Pinto",
-            date: "11/02/2023",
-            comment: " -This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-        },
-        {
-            name: "Christina Cabrera",
-            date: "10/28/2023",
-            comment: " -I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-        },
-        {
-            name: "Isaac Tadesse",
-            date: "10/20/2023",
-            comment: " -I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-        }
-    ];
+import bandSiteApi from './band-site-api';
 
-    //
-    const form = document.querySelector(".conv__form");
-    const commentsSection = document.querySelector(".comments");
-
-    console.log(form);
-
-    console.log(commentsSection);
-
-    function displayComment() {
-
-        commentsSection.innerHTML = "";
-        let newSec = document.createElement('hr');
-        commentsSection.appendChild(newSec);
-        newSec.classList.add("comments__new-sec");
-        //looping through each comment
-        comments.forEach((comment) => {
-
-            const commentContainer = document.createElement("div");
-            const avatarContainer = document.createElement("div");
-            const userDetail = document.createElement("div");
-            const nameContainer = document.createElement("div");
-            const dateContainer = document.createElement("div");
-            const name = document.createElement("p");
-            const date = document.createElement("p");
-            const commentDes = document.createElement("div");
-            const userComment = document.createElement("div");
-            newSec = document.createElement('hr');
-
-            name.innerText = comment.name;
-            date.innerText = comment.date;
-            commentDes.innerText = comment.comment;
-
-
-
-            nameContainer.appendChild(name);
-            dateContainer.appendChild(date);
-            userDetail.appendChild(nameContainer);
-            userDetail.appendChild(dateContainer);
-
-
-            avatarContainer.classList.add("comments__avatar-cont");
-            userDetail.classList.add("comments__user-detail");
-            name.classList.add("comments__name");
-            date.classList.add("comments__date");
-            commentDes.classList.add("comments__comment-des");
-            userComment.classList.add("comments__user-cont");
-            newSec.classList.add("comments__new-sec");
-            commentContainer.classList.add("comments__comment-cont");
-
-
-            userComment.appendChild(userDetail);
-            userComment.appendChild(commentDes);
-
-            commentContainer.appendChild(avatarContainer);
-            commentContainer.appendChild(userComment);
+// Function to fetch and display comments
+async function displayComments() {
+    try {
+        const comments = await bandSiteApi.getComments();
+        const commentsContainer = document.querySelector('.comments');
         
+        // Clear existing comments
+        commentsContainer.innerHTML = '';
 
-            commentsSection.appendChild(commentContainer);
-            commentsSection.appendChild(newSec);
+        // Iterate through comments and create HTML elements
+        comments.forEach(comment => {
+            const commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+            commentElement.innerHTML = `
+                <div class="comment__profile">
+                    <img class="comment__profile-img" src="./assets/Images/placeholder-avatar.jpg" alt="user profile">
+                </div>
+                <div class="comment__details">
+                    <h3 class="comment__name">${comment.name}</h3>
+                    <p class="comment__text">${comment.text}</p>
+                    <p class="comment__timestamp">${new Date(comment.timestamp).toLocaleString()}</p>
+                </div>
+            `;
+            commentsContainer.appendChild(commentElement);
         });
-        
-    };
-    //invoking function
-    displayComment();
+    } catch (error) {
+        console.error('Error fetching comments:', error);
+    }
+}
 
-    form.addEventListener("submit", (e) => {
+// Function to handle form submission for adding a new comment
+async function handleCommentSubmission(event) {
+    event.preventDefault();
+    
+    const nameInput = document.querySelector('.conv__name-input');
+    const commentInput = document.querySelector('.conv__comment-input');
+    
+    const name = nameInput.value.trim();
+    const commentText = commentInput.value.trim();
+    
+    if (!name || !commentText) {
+        alert('Please enter your name and comment');
+        return;
+    }
+    
+    try {
+        await bandSiteApi.postComment({ name, text: commentText });
+        nameInput.value = '';
+        commentInput.value = '';
+        await displayComments();
+    } catch (error) {
+        console.error('Error posting comment:', error);
+    }
+}
 
-        e.preventDefault();
-        let date = new Date().toLocaleDateString('en-us');
-        console.log(e.target.name.value);
+// Event listener for form submission
+const commentForm = document.querySelector('.conv__form');
+commentForm.addEventListener('submit', handleCommentSubmission);
 
-        let newComment = {
-            name: e.target.name.value,
-            date: date,
-            comment: e.target.comment.value
-        };
-        console.log(newComment);
-        e.target.name.value = "";
-        e.target.comment.value = "";
-        comments.unshift(newComment);
-        displayComment();
- 
- 
-    });
+// Initial call to display comments when the page loads
+displayComments();
+

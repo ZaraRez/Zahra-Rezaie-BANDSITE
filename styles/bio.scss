@@ -1,757 +1,687 @@
 //Sass partials
 
-@use'partials/variables' as *;
-@use 'partials/fonts' as *;
-@use 'partials/mixins' as *;
-@import 'partials/variables';
+@use "partials/variables" as *;
+@use "partials/fonts" as *;
+@use "partials/mixins" as *;
+@import "partials/variables";
 
-
-
-
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-
 body {
-    margin: 0;
-    padding: 0;
-    font-family: $body-font;
-    color:  $primary;
-  }
-h1, h2, h3, h4 {
-    font-family: $subheader-font;
+  margin: 0;
+  padding: 0;
+  font-family: $body-font;
+  color: $primary;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: $subheader-font;
 
-
-
-
-// Header Section SASS
-.header {
+  // Header Section SASS
+  .header {
     padding-top: 1rem;
     background-color: $primary;
     color: $white;
 
-
     @include tablet {
-        padding-top: 0rem;
+      padding-top: 0rem;
     }
-}
+  }
 
-// header Section Sass
-.container{
+  // header Section Sass
+  .container {
     background-color: $primary;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 999;
 
-
     @include tablet {
-        display: flex;
-        height: 4.5rem;
+      display: flex;
+      height: 4.5rem;
     }
     @include desktop {
-        display: flex;
-        height: 6rem;
+      display: flex;
+      height: 6rem;
     }
 
     &__logo {
-        height: 1.875rem;  
-        display: flex;
-        justify-content: center;
-            margin-top: 1rem;
+      height: 1.875rem;
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
 
-        @include tablet {
-         
-            max-height: 1.625rem;
-            align-items: center;
-            margin: auto 1rem auto 2.5rem;
-
-
-        }
-
-        @include desktop {
-            margin-left: 7.5rem;
-        }
-    }
-
-    
-}
-    &__list{
-        display: flex;
-        width: 100%;
-        margin-block-start: 0;
-        justify-content: center;
-
-        @include tablet{
-            width: 30%;  
-            justify-content: start;
-        }
-        ul {
-            margin-block-start: 1em;
-            margin-block-end: 0em;
-            
-        }
-        
-            li {
-            list-style: none;
-           
-        }
-        
-            a {
-                color: white;
-                text-decoration: none;
-               margin: 0rem 0rem;
-        }
-    }
-
-    &__list{
-        display: inline-flex;
-        width: 100%;
-        height: 100%;
-        font-size: 1rem;
-        justify-content: center;
+      @include tablet {
+        max-height: 1.625rem;
         align-items: center;
-        font-weight: 700;
-        color: $white;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        &--nonactive:hover{
-        font-family: $body-font;
-        border-bottom: 4px $white solid;
-          
-        }
+        margin: auto 1rem auto 2.5rem;
+      }
 
-        &--active{
-            font-family: $body-font;
-            border-bottom: 4px $white solid;
-            color: #FAFAFA;
-        }
-    
-        @include tablet {
-            padding: 0rem;
-            font-size: 0.875rem;
-            font-family: $subheader-font;
-            width: auto;
-            display: flex;
-            justify-content: baseline;
-            margin: auto 2rem auto 2rem;
-        }
+      @include desktop {
+        margin-left: 7.5rem;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    width: 100%;
+    margin-block-start: 0;
+    justify-content: center;
+
+    @include tablet {
+      width: 30%;
+      justify-content: start;
+    }
+    ul {
+      margin-block-start: 1em;
+      margin-block-end: 0em;
     }
 
-    &__link {
-        color:$white;
-        text-decoration: none;
+    li {
+      list-style: none;
     }
+
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 0rem 0rem;
+    }
+  }
+
+  &__list {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: $white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    &--nonactive:hover {
+      font-family: $body-font;
+      border-bottom: 4px $white solid;
+    }
+
+    &--active {
+      font-family: $body-font;
+      border-bottom: 4px $white solid;
+      color: #fafafa;
+    }
+
+    @include tablet {
+      padding: 0rem;
+      font-size: 0.875rem;
+      font-family: $subheader-font;
+      width: auto;
+      display: flex;
+      justify-content: baseline;
+      margin: auto 2rem auto 2rem;
+    }
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+  }
 }
 
 // Hero Section SASS
 .hero {
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 17.5rem;
+  width: 101.5%;
+  display: flex;
+  position: relative;
+  align-items: center;
 
-    background-image: url(../assets/images/hero-bio.jpg);
-    background-size: cover;
-    background-position: center ; 
-    background-repeat: no-repeat;
-    height: 17.5rem;
-    width: 101.5%;
-    display: flex;
-    position: relative;
-    align-items: center;
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: $primary;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  &__title {
+    color: $white;
+    position: absolute;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    z-index: 1;
+    letter-spacing: 0.125rem;
+    font-family: $subheader-font;
 
-    &__overlay{
-        width: 100%;
-        height: 100%;
-        background-color: $primary;
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 0;
+    @include tablet {
+      font-size: 3.4rem;
+      font-family: $subheader-font;
+      margin-left: 3rem;
+      margin-top: 3rem;
+      letter-spacing: 0.25rem;
     }
-    &__title {
-        color: $white;
-        position: absolute;
-        margin-left: 1.5rem;
-        margin-top: 1rem;
-        font-size: 1.5rem;
-        z-index: 1;
-        letter-spacing: 0.125rem;
-        font-family: $subheader-font;
-
-        @include tablet {
-            font-size: 3.4rem;
-            font-family: $subheader-font;
-            margin-left: 3rem;
-            margin-top: 3rem;
-            letter-spacing: 0.25rem;
-        }
-        @include desktop {
-            font-size: 4rem;
-            margin-left: 7.8rem;
-            margin-top: -3rem;
-            letter-spacing: 0.1rem;
-        }
+    @include desktop {
+      font-size: 4rem;
+      margin-left: 7.8rem;
+      margin-top: -3rem;
+      letter-spacing: 0.1rem;
     }
+  }
 
-    @include tablet{
-        height: 29rem;
-    }
+  @include tablet {
+    height: 29rem;
+  }
 
-
-    @include desktop{
-        height: 45.5rem;
-    }
-
-
-
+  @include desktop {
+    height: 45.5rem;
+  }
 }
 
 // About Section SAS
-.about{
-    padding: 1rem;
+.about {
+  padding: 1rem;
 
-    @include tablet{
-        width: 90%;
-        display: flexbox;
-        margin: auto;
+  @include tablet {
+    width: 90%;
+    display: flexbox;
+    margin: auto;
+  }
 
+  &__title-sec {
+    font-weight: 600;
+    font-family: $subheader-font;
+    font-size: 2.25rem;
+    margin: 2.75rem 1rem 1rem 1rem;
+
+    @include tablet {
+      font-size: 2.2rem;
     }
 
-    &__title-sec {
-        font-weight: 600;
-        font-family: $subheader-font; 
-        font-size: 2.25rem;
-        margin: 2.75rem 1rem 1rem 1rem;
-
-
-        @include tablet{
-            font-size: 2.2rem;
-     
-        }
-
-        @include desktop{
-            margin-left: 2.4rem;
-     
-        }
+    @include desktop {
+      margin-left: 2.4rem;
     }
+  }
 
-    &__container-bio{
-        display: flex;
-        flex-direction: column;    
-        width: 90%;
-        padding: 1rem;     
-        margin: auto;
-
-        @include desktop{
-            padding: 1rem 4rem 1rem 4rem;
-     
-        }
-
-    }
-    &__image {
-        object-fit: cover;
-        aspect-ratio: 16/9;
-        width: 100%;
-        object-position: bottom;
-        width: 100%;
-
-        max-height: 20rem;
-
-        @include tablet {
-
-            max-height: 38rem;
-        }  
-        @include desktop {
-            max-height: 48rem;
-
-        }
-    }
-    &__quote{
-        margin: 1.6rem auto auto auto;
-        line-height: 2rem;
-        font-family: $subheader-font;
-        flex-wrap: wrap;
-        @include tablet{
-            font-size: 1.5rem;
-            margin: 1.6rem 0rem;
-     
-        }
-        @include desktop{
-            justify-content: flex-start;
-            width: 66%;
-     
-        }
-
-    }
-
-    &__auth{
-        margin: 0% auto auto 0;
-        font-weight: 600;
-        font-family: $subheader-font;
-
-
-    }
-
-    &__container-des{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 1rem;
-        @include tablet{
-            width: 90%;
-            display: flexbox;
-            margin: auto;
-
-    
-        }
-        @include desktop{
-            padding: 1rem 4rem 1rem 4rem;
-     
-        }
-        
-    }
-
-    &__title-des {
-        margin-left: 0rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        font-weight: 400;
-        @include tablet{
-            font-size: 1.5rem;
-            line-height: 2.75rem;
-        }
-        @include desktop{
-        
-     
-        }
-  
-        
-
-    }
-
-    
-    &__para-container{
-        line-height: 1.5;
-
-        @include tablet {
-            display: flex;
-            flex-direction: row;
-        }
-
-    }
-
-    &__para{
-        margin-bottom: 1rem;
-        @include tablet {
-            padding: 0rem 1.5rem 0rem 0rem;
-            font-size: 1rem;
-        }
-
-    }
-
-    @include desktop{
-
-    }
-
-
-
-}
-// Gallery Section SASS
-.gallery{
-    background-color: $secondary;
+  &__container-bio {
     display: flex;
     flex-direction: column;
-    padding:2.4rem 1.6rem 0rem 1.6rem;
+    width: 90%;
+    padding: 1rem;
+    margin: auto;
 
-    &__title {
-        font-size: 2.25rem;
-        font-weight: 600;
-        font-family: $subheader-font;
+    @include desktop {
+      padding: 1rem 4rem 1rem 4rem;
     }
+  }
+  &__image {
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    width: 100%;
+    object-position: bottom;
+    width: 100%;
 
-    &__image {
-        padding: 1rem 0rem ;
-        @include tablet {
-            width: 33.3%;
-            padding: 0.9rem 1.8rem 0.9rem 0rem ;
-        
-        }
-        &--cornor{
-            padding-right: 0;
-        }
+    max-height: 20rem;
 
-        
+    @include tablet {
+      max-height: 38rem;
     }
-    &__container {
-        display: flex;
-        flex-direction: column;
-        @include tablet {
-            flex-direction: row;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-            margin-right: 0;
-        
-        }
-        
+    @include desktop {
+      max-height: 48rem;
     }
-    @include desktop{
-        padding: 3rem 7rem 1rem 7rem;
+  }
+  &__quote {
+    margin: 1.6rem auto auto auto;
+    line-height: 2rem;
+    font-family: $subheader-font;
+    flex-wrap: wrap;
+    @include tablet {
+      font-size: 1.5rem;
+      margin: 1.6rem 0rem;
     }
+    @include desktop {
+      justify-content: flex-start;
+      width: 66%;
+    }
+  }
+
+  &__auth {
+    margin: 0% auto auto 0;
+    font-weight: 600;
+    font-family: $subheader-font;
+  }
+
+  &__container-des {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    @include tablet {
+      width: 90%;
+      display: flexbox;
+      margin: auto;
+    }
+    @include desktop {
+      padding: 1rem 4rem 1rem 4rem;
+    }
+  }
+
+  &__title-des {
+    margin-left: 0rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 2.75rem;
+    }
+    @include desktop {
+    }
+  }
+
+  &__para-container {
+    line-height: 1.5;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__para {
+    margin-bottom: 1rem;
+    @include tablet {
+      padding: 0rem 1.5rem 0rem 0rem;
+      font-size: 1rem;
+    }
+  }
+
+  @include desktop {display: flex;
+    margin: 0 auto;
+    max-width: 63.75rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem;
+  }
 }
+// Gallery Section SASS
+.gallery {
+  background-color: $secondary;
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 1.6rem 0rem 1.6rem;
 
+  &__title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    font-family: $subheader-font;
+  }
+
+  &__image {
+    padding: 1rem 0rem;
+    @include tablet {
+      width: 33.3%;
+      padding: 0.9rem 1.8rem 0.9rem 0rem;
+    }
+    &--cornor {
+      padding-right: 0;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+  }
+  @include desktop {
+    padding: 3rem 7rem 1rem 7rem;
+  }
+}
 
 //conversation section sass
 
-.conv__section{
+.conv__section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include tablet {
+    max-width: 63.75;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    @include tablet {
-        max-width: 63.75;
-        display: flex;
-        justify-content: center;
-        margin: 1rem auto;
-        width: 80%;
-
-    }
-    @include desktop {
-        max-width: 63.75;
-        width: 50%;
-
-    }
+    justify-content: center;
+    margin: 1rem auto;
+    width: 80%;
+  }
+  @include desktop {
+    max-width: 63.75;
+    width: 50%;
+  }
 }
-&__section-title{
-    font-size: 2rem;
-    font-weight: 600;
-    font-family: $sobheader-font;
-    margin: 0rem 0rem 2rem 0rem;
-    @include tablet {
-        font-size: 2.25rem;
-        margin: 1rem 0rem 2rem 0rem;
-    }
-    @include desktop{
+&__section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: $sobheader-font;
+  margin: 0rem 0rem 2rem 0rem;
+  @include tablet {
+    font-size: 2.25rem;
+    margin: 1rem 0rem 2rem 0rem;
+  }
+  @include desktop {
     margin: 3rem 0rem 2rem 0rem;
-    }
+  }
 }
 &--form {
-display: flex;
-flex-direction: column;
-justify-content: center;
-width: 85%;
-@include tablet {
-
-}
-@include desktop {
-
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 85%;
+  @include tablet {
+  }
+  @include desktop {
+  }
 }
 &__name-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 &__email-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-&__name-label{
-    color: #AFAFAF;
-    margin-bottom: 1rem;
+&__name-label,
+&__comment-label {
+  // New styles for name and comment labels...
+  color: #afafaf;
+  margin-bottom: 1rem;
 }
 
-&__comment-label{
-    color: #AFAFAF;
-    margin-bottom: 1rem;
-
-}
-
-&__name-input{
-    font-size: 1.0rem;
-    width: 100%;
-    background-color: #FAFAFA;
-    border-radius: 4px;
-    border: 2px solid #E1E1E1;
-    height: 3rem;
-    padding-left: 1rem;
-    margin-bottom: 2rem;
+&__name-input {
+  font-size: 1rem;
+  width: 100%;
+  background-color: #fafafa;
+  border-radius: 4px;
+  border: 2px solid #e1e1e1;
+  height: 3rem;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 &__comment-input {
-    background-color: #FAFAFA;
-    font-size: 1rem;
+  background-color: #fafafa;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #e1e1e1;
+  height: 8rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  margin: 1rem 0rem;
+}
+&__comment-input {
+  // Additional styles specific to comment input...
+  height: 8rem;
+  padding-bottom: 4rem;
+}
+
+&__btn {
+  width: 100%;
+  height: 4.6rem;
+  background-color: #323232;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 1.5rem;
+  &:hover {
+    background-color: black;  
+    cursor: pointer;
+  }:active {
+      cursor: pointer;
+  }
+  @include tablet {
+    width: 33%;
+    height: 3.2rem;
+    padding: 0 1rem;
+  }
+  @include desktop {
+    width: 44%;
+  }
+}
+
+&__btn-cont {
+  display: flex;
+  @include tablet {
+    height: 3.6rem;
     width: 100%;
-    border-radius: 4px;
-    border: 2px solid #E1E1E1;
-    height: 8rem;
-    padding-bottom: 4rem;
-    padding-left: 1rem;
-    margin: 1rem 0rem;
-
-}
-&__btn{
-    width: 100%;
-    height: 4.6rem;
-    background-color: #323232;
-    color: #FFF;
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 1.5rem;
-    &:hover{
-        background-color: black;
-
-    }
-    @include tablet {
-        width: 33%;
-        height: 3.2rem;
-        padding: 0 1rem;
-    }
-    @include desktop {
-        width: 44%;
-    }
-
-}
-
-&__btn-cont{
-    display: flex;
-    @include tablet {
-        height: 3.6rem;
-        width: 100%;
-        justify-content: flex-end;
-        
-    }
-
-}
-
-&__profile{
-    display: flex;
-    width: 13%;
     justify-content: flex-end;
-
+  }
 }
 
+&__profile {
+  display: flex;
+  width: 13%;
+  justify-content: flex-end;
+}
 
-
-&__profile-img{
-    margin-top: 1.3rem;
+&__profile-img {
+  margin-top: 1.3rem;
+  margin-right: 1rem;
+  width: 2.75em;
+  height: 2.75rem;
+  object-fit: cover;
+  border-radius: 1.3rem;   
+  @include tablet{
     margin-right: 1.4rem;
-    width: 2.75em;
-    height: 2.75rem;
-    object-fit: cover;
-    border-radius: 1.3rem;
-    
+}
+@include desktop{
+    margin-right: 1.2rem;
 }
 
-
-
-&__section{
-
-    padding: 2.4rem 1.6rem 0rem 1.6rem;
-
-    @include desktop{
-        @include desktop-size;
-    }
 }
 
+&__section {
+  padding: 2.4rem 1.6rem 0rem 1.6rem;
 
-
-
-.comments{
-padding: 1rem 1.6rem 0rem 1.6rem;
-
-
-
-&__user-cont{
-    width: 85%;
+  @include desktop {
+    @include desktop-size;
+  }
+}
+ @include tablet {
+  max-width: 63.75;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 40rem;
+}
+@include desktop {
+  max-width: 63.75;
+  width: 50%;
 }
 
-&__user-detail {
+comments{
+  padding: 1rem 1.6rem 0rem 1.6rem;
+  &__user-cont{
+      width: 85%;
+      padding-left: 0.5rem;
+  }
+  &__user-detail {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  &__avatar-cont {
+      justify-content: flex-end;
+      border-radius: 1.3rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      background-color: #E1E1E1;
+      margin-right: 1.18rem;
+  }
+  &__comment-cont {
+      display: flex;
+      flex-direction: row;
+      padding: 1.5rem 0rem;
+      border-top: 0.5px solid #E1E1E1;
+      border-bottom: 0.5px solid #E1E1E1;
+      @include tablet {
+          margin: 0rem auto;
+          padding: 2rem 0rem;
+          width: 80%;
+          max-width: 40rem;
+          display: flex;
+          justify-content: center;
+   
+      } 
+      @include desktop {
+          width: 61%;
+      }     
+  }
+  &__comment-cont--fnode{
+      border-top: 1px solid #E1E1E1;
+  }
+  &__comment-cont--lnode{
+      border-bottom: 1px solid #E1E1E1;
+  }
+  &__name{
+      font-weight: 600;
+      margin-bottom: 1rem;
+  }
+  &__date {
+      color: #AFAFAF;
+  }
+  &__new-sec {
+      opacity: 0.5;
+      @include tablet {
+          display: flex;
+          justify-content: center;
+          margin: 1rem auto;
+          width: 80%;       
+          max-width: 34rem;
+      }
+      @include desktop {
+          width: 60%;
+      }    
+  }
+  @include tablet {
+      font-size: 0.8rem;
+  }
+  @include desktop {
+      @include desktop-size;
+      width: 65%;
+      max-width: 52rem;
+  }
+}
+
+// Footer Section SASS
+.footer {
+  padding: 2.4rem 1.6rem;
+  background-color: $primary;
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+&__title {
+  margin-bottom: 0;
+  padding: 0;
+  order: 1;
+  font-size: 2.25rem;
+
+  font-weight: 500;
+}
+
+&__socialmedia {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+@include tablet {
+  flex-grow: 1;
+  margin-left: 2rem;
+}
+@include desktop {
+  margin-left: 3rem;
+}
+
+&__image {
+  padding: 1rem 1rem 0rem 0rem;
+
+  @include tablet {
+    padding: 0.7rem 1rem 0rem 0rem;
+  }
+  @include desktop {
+    padding: 0.7rem 2rem 0rem 0rem;
+  }
+}
+
+&__contact {
+  order: 3;
+  @include tablet {
+    order: 4;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-&__comment-cont {
-    display: flex;
-    flex-direction: row;
-}
+    width: 100%;
+  }
 
-&__avatar-cont {
-    justify-content: flex-end;
-    border-radius: 1.3rem;
-    width: 2.75em;
-    height: 2.75rem;
-    background-color: #E1E1E1;
-    margin-right: 1.5rem;
-    margin-top: 0.5rem;
+  @include desktop {
+    justify-content: start;
+    width: 77%;
+    flex-grow: 2;
+  }
 }
 
-&__comment-cont {
-    margin: 1rem auto;
-    @include tablet {
-        width: 80%;
-        max-width: 48rem;
-        display: flex;
-        justify-content: center;
-       
-    } 
-    @include desktop {
-        width: 61%;
-    }     
-}
-&__name{
-    font-family: $subheader-font;
-    margin-bottom: 1rem;
-
+&__container-contact {
+  margin-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  @include tablet {
+    width: 33%;
+  }
 }
 
-&__date {
-    color: #AFAFAF;
+&__email {
+  color: $white;
+  text-decoration: none;
 }
 
-
-&__new-sec {
-    opacity: 0.5;
-    @include tablet {
-        display: flex;
-        justify-content: center;
-        margin: 1rem auto;
-        width: 80%;
-   
-        max-width: 48rem;
-
-
-    }
-    @include desktop {
-        width: 60%;
-    }    
-
-}
-@include tablet {
-
+&__contact-title {
+  font-family: $subheader-font;
 }
 
+&__image-logo {
+  order: 4;
+  width: 12.5rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
 
-
-@include desktop {
-    @include desktop-size;
-    width: 65%;
-    max-width: 52rem;
-    
+  @include tablet {
+    width: 8.5rem;
+    order: 3;
+    margin: 0rem 0rem;
+    padding: 0rem 0rem;
+    max-height: 2.5rem;
+  }
 }
-
-}
-
-
-// Footer Section SASS
-.footer{
-    padding: 2.4rem 1.6rem;
-    background-color: $primary;
-    color: #FAFAFA;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-     }
-
-    &__title {
-        
-        margin-bottom: 0;
-        padding: 0;
-        order: 1;
-        font-size: 2.25rem;
-
-        font-weight: 500;
-     
-    }
-
-    &__socialmedia{
-        display: flex;
-        align-items: center;
-    padding: 30px;}
-       
-        
-        @include tablet{
-            flex-grow: 1;
-            margin-left: 2rem;
-        }
-        @include desktop {
-            margin-left: 3rem;
-        }
-
-
-    &__image {
-  
-        padding: 1rem 1rem 0rem 0rem;
-
-        @include tablet{
-            padding: 0.7rem 1rem 0rem 0rem;
-        }
-        @include desktop {
-            padding: 0.7rem 2rem 0rem 0rem;
-        }
-      
-    }
-
-
-
-    &__contact{
-        order: 3;
-        @include tablet {
-            order: 4;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-
-        }
-
-        @include desktop {
-            justify-content: start;
-            width: 77%;
-            flex-grow: 2;
-    
-        }
-    }
-
-    &__container-contact{
-        margin-top: 2rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        @include tablet {
-            width: 33%;
-        }
-    }
-
-    &__email{
-        color:$white;
-        text-decoration: none;
-    }
-
-
-     &__contact-title{
-        font-family: $subheader-font;
-     }
-
-
-    &__image-logo{
-        order: 4;
-        width: 12.5rem;
-        margin-top: 3.5rem;
-        margin-bottom: 1.5rem;
-        
-        @include tablet {
-            width: 8.5rem;
-            order: 3;
-            margin: 0rem 0rem;
-            padding: 0rem 0rem;
-            max-height: 2.5rem;
-            
-            
-        }
-    }
